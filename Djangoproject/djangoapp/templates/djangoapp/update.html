@@ -1,0 +1,21 @@
+{% extends 'djangoapp/base.html' %}
+
+
+{% block title %}
+    Редактирование
+{% endblock %}
+
+{% block content %}
+    <h1>Сqздать какую нибудь задачу</h1>
+    <form method="post">
+        {% csrf_token %}
+        <h1>{{ form.title }}</h1>
+        <h1>{{ form.task }}</h1>
+      <button type="submit" class="btn btn-success">Редактировать</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}
+
+
+
+

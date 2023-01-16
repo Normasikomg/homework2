@@ -1,0 +1,21 @@
+{% extends 'djangoapp/base.html' %}
+
+
+{% block title %}
+    Удаление
+{% endblock %}
+
+{% block content %}
+    <h1>Удаление</h1>
+    <form method="post">
+        {% csrf_token %}
+        <h1>{{ form.title }}</h1>
+        <h1>{{ form.task }}</h1>
+      <button type="submit" class="btn btn-success">Удалить</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}
+
+
+
+

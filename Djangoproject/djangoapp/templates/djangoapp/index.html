@@ -1,0 +1,25 @@
+{% extends 'djangoapp/base.html' %}
+
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>вот такая страница</h1>
+    {% if task %}
+        {% for el in task %}
+            <div class="alert alert-warning mt-2">
+                <h3>{{ el.title }}</h3>
+                <h3>{{ el.task }}</h3>
+                <a href="{% url 'update' el.id %}" class="btn btn-warning">Редактировать</a> <a href="{% url 'delete' el.id %}" class="btn btn-warning">Удалить статью</a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>у вас нет записей</p>
+    {% endif %}
+{% endblock %}
+
+
+
+
